@@ -1,0 +1,51 @@
+<view>
+  <view>
+    <image class="logo" src="../../pages/images/logo.png"></image>
+  </view>
+  <view class="category">
+    <button bindtap="all" class='catbut' size='width:100rpx' style='width:146rpx;height:80rpx'>全部all</button>
+    <button bindtap='coffee' class='catbut' size='width:100rpx' style='width:146rpx;height:80rpx'>咖啡coffee</button>
+    <button bindtap='juice' class='catbut' style='width:146rpx;height:80rpx'>果汁juice</button>
+    <button bindtap='tea' class='catbut' style='width:146rpx;height:80rpx'>奶茶milktea</button>
+    <button bindtap='smoothies' class='catbut' style='width:146rpx;height:80rpx'>冰沙smoothie</button>
+  </view>
+  <view class='window'>
+    <scroll-view scroll-y="true" class='scroll'>
+      <view wx:for="{{list1}}" class="item">
+        <button bindtap='{{item.minusButtonName}}'
+          style='height:50rpx;;min-height: unset !important;padding:0;width:50rpx' class='subtract'>-</button>
+        <button bindtap='{{item.addButtonName}}'
+          style='height:50rpx;;min-height: unset !important;padding:0;width:50rpx' class='add'>+</button>
+        <image class='image' src="{{item.coverPath}}"></image>
+        <view class="name">{{item.name}}</view>
+        <view class="price">{{item.price}}</view>
+        <text style='width:30rpx' class='q'>{{item.q}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='purchase'>
+  <button catchtap='clickPup' size="mini" class="GWC">
+    <image class='cart' src='../images/cart.png'></image>
+  </button>
+  <button class="finished" style='width:200rpx' size="mini">
+    <view class="JieSuan" style='width:180rpx'>预约reserve</view>
+  </button>
+  <view class='pupContent {{click? "showContent": "hideContent"}} {{option? "open": "close"}}'
+    hover-stop-propagation='true'>
+    <scroll-view scroll-y="true" class='purchaseScroll' style='border-radius:20rpx'>
+      <view wx:for="{{list3}}" class='pupContent-top' class='purchaseItem'>
+        <image class='imagep' src='{{item.coverPath}}'></image>
+        <view class='pname'>{{item.name}}</view>
+        <text style='width:30rpx' class='pq'>x{{item.q}}</text>
+        <text class='pcost'>总价</text>
+        <text class='pcoste'>cost</text>
+        <text class='sign1'>：</text>
+        <text class='tcostper'>${{item.total}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='pupContentBG {{click?"showBG":"hideBG"}} {{option?"openBG":"closeBG"}}' catchtap='clickPup'>
+  </view>
+  <text class='totalcost'>${{totalCost}}</text>
+</view>

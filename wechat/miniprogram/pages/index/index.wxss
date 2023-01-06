@@ -1,0 +1,314 @@
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.purchase{
+  position: fixed;
+  top: 91vh;
+  left: 5rpx;
+  height: 80rpx;
+  width:739rpx;
+  border-radius: 40rpx;
+  border: 5rpx solid black;
+  background-color: yellow;
+} /*黄色的买单格子*/
+.cart{
+  position:relative;
+  left: 12rpx;
+  top:8rpx;
+  height:60rpx;
+  width: 80rpx;
+} /*购物车图片*/
+.logo{
+  height: 250rpx;
+  position: fixed;
+  width: 100vw;
+}/*最顶上标志*/
+.category{
+  width: 144rpx;
+  height: 69vh;
+  position: fixed;
+  top: 250rpx;
+  border: 2rpx solid black;
+  border-radius: 5rpx;
+}/*左手边分类大格子*/
+.window{
+  width: 640rpx;
+  height: 70vh;
+  position: fixed;
+  left: 150rpx;
+  top: 252rpx;
+  flex-grow: 1;
+}/*中间商品的大格子*/
+.image{
+  position: relative;
+  left: -60rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}/*所有饮料图片*/
+.item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  height: 140rpx;
+  width:600rpx;
+  border: 2rpx solid black;
+  border-radius: 10rpx;
+}/*所有商品的单一格子*/
+.add{
+  position: relative;
+  bottom: -30rpx;
+  left: 400rpx;
+  border-radius: 50rpx;
+  background-color: orange;
+}
+.subtract{
+  position: relative;
+  left: 500rpx;
+  bottom: -80rpx;
+  border-radius: 50rpx;
+  background-color: orange;
+}
+/*减少一个的图片*/
+.scroll{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  height: 69vh;
+} /*滑动窗口，不需要进行改变了*/
+.name{
+  position: relative;
+  left: -50rpx;
+  top: 10rpx;
+}/*商品名字*/
+.price{
+  position:relative;
+  left: -30rpx;
+  top: 40rpx;
+}/*价格*/
+.catbut{
+  border: 2rpx solid black;
+  font-size: 10px;
+  line-height: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pNum{
+  position: relative;
+  left: 430rpx;
+  top: 75rpx;
+  font-size: 40rpx;
+}
+.q{
+  position: relative;
+  right:-275rpx;
+  font-size: 30rpx;
+}
+
+.GWC{
+  position: relative;
+  left:18rpx;
+  top:8rpx;
+  background-color: yellow;
+}
+
+.finished{
+  position: relative;
+  left:370rpx;
+  top:3rpx;
+  background-color: yellow;
+}
+
+.JieSuan{
+  font-size: 31rpx;
+}
+
+.pupContentBG {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.pupContent {
+  width: 100%;
+  border-radius: 20rpx;
+  background:white;
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 0 10rpx #333;
+  height: 0;
+  z-index: 999;
+}
+
+/* 设置显示的背景 */
+
+.showBG {
+  display: block;
+}
+
+.hideBG {
+  display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideBGtUp {
+  from {
+    background: transparent;
+  }
+
+  to {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes slideBGDown {
+  from {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  to {
+    background: transparent;
+  }
+}
+
+/* 显示或关闭内容时动画 */
+
+.openBG {
+  animation: slideBGtUp 0.5s ease-in both;
+  /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.closeBG {
+  animation: slideBGDown 0.5s ease-in both;
+  /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+/* 设置显示内容 */
+
+.showContent {
+  display: block;
+}
+
+.hideContent {
+  display: none;
+}
+
+/* 弹出或关闭动画来动态设置内容高度 */
+
+@keyframes slideContentUp {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 800rpx;
+  }
+}
+
+@keyframes slideContentDown {
+  from {
+    height: 800rpx;
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+/* 显示或关闭内容时动画 */
+
+.open {
+  animation: slideContentUp 0.2s ease-in both;
+  /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+
+.close {
+  animation: slideContentDown 0.2s ease-in both;
+  /* animation-fill-mode: both 动画将会执行 forwards 和 backwards 执行的动作。 */
+}
+.purchaseScroll{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  height: 800rpx;
+  overflow: hidden;
+}
+.purchaseItem{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  height: 140rpx;
+  width:100vw;
+  border: 2rpx solid black;
+}
+.imagep{
+  width: 140rpx;
+  height: 140rpx;
+}
+.pname{
+  position: relative;
+  left: 20rpx;
+  top: 10rpx;
+  font-size: 35rpx;
+  width: 300rpx;
+}
+.pq{
+  position: relative;
+  left: 100rpx;
+  bottom: -40rpx;
+  font-size: 30rpx;
+}
+.pcost{
+  width: 70rpx;
+  position: relative;
+  left:380rpx ;
+  bottom:50rpx;
+}
+.pcoste{
+  width:70rpx;
+  position: relative;
+  left:80rpx ;
+  top: 80rpx;
+}
+.sign1{
+  position: relative;
+  left:150rpx ;
+  top: 10rpx;
+  font-size: 40rpx;
+}
+.tcostper{
+  position: relative;
+  left:110rpx;
+  top:55rpx;
+  font-size: 40rpx;
+}
+.totalcost{
+  font-size: 35rpx;
+  position: relative;
+  bottom: 17rpx;
+  left:-150rpx;
+  color: gray;
+}
+.cart{
+  width: 85rpx;
+  height:50rpx;
+}
